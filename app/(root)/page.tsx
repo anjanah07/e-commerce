@@ -1,10 +1,16 @@
+import sampleData from "@/db/sample-data";
+import ProductList from "@/components/shared/products/product-list";
 export const metadata = {
   title: "Home",
 };
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-export default async function Home() {
-  await delay(2000);
+export default function Home() {
   return (
-    <div className="flex h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black"></div>
+    <div>
+      <ProductList
+        data={sampleData.products}
+        title="Newest arrivals"
+        limit={4}
+      />
+    </div>
   );
 }
