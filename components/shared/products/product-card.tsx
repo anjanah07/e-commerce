@@ -3,8 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import ProductPrice from "./product-price";
+import { Product } from "@/types";
 
-const ProductCard = ({ product }: { product: any }) => {
+const ProductCard = ({ product }: { product: Product }) => {
   return (
     <div>
       <Card className="w-full max-w-sm mx-16 my-3">
