@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import ProductList from "@/components/shared/products/product-list";
 import { getLatestProducts } from "@/lib/actions/products.actions";
 import { Product } from "@/types";
