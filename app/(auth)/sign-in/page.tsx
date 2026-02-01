@@ -14,7 +14,16 @@ import CredentialsSignInForm from "./credentials-signin-form";
 export const metadata: Metadata = {
   title: "Sign In",
 };
-const SignInPage = () => {
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+const SignInPage = async (props: {
+  searchParams: Promise<{
+    callbackUrl : string
+  }>
+}) => {
+  const {callbackUrl} = await props.searchParams
+  const session = await auth();
+  if (session) return redirect(callbackUrl || "/");
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-md">
